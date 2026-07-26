@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-background: #07111f;
+  --color-surface: #101c2b;
+  --color-surface-raised: #16263a;
+  --color-border: #22334a;
+  --color-border-strong: #2c4363;
+
+  --color-text-primary: #f5f7fa;
+  --color-text-secondary: #aab4c3;
+  --color-text-muted: #7889a0;
+
+  --color-accent: #3487f7;
+  --color-accent-hover: #529af8;
+  --color-accent-secondary: #47c6d9;
+
+  --color-light-surface: #f5f7fa;
+  --color-dark-text: #172033;
+
+  /* Typography */
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-text-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-secondary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+}
