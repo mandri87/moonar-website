@@ -110,11 +110,11 @@ export const products = [
         id: "section-designer-plus",
         name: "Section Designer +",
         summary:
-          "Automatically generates tyre section geometries from specification data, alignment parameters and customer-specific engineering constraints.",
+          "Calculates the specification matrix and develops flat, unrolled theoretical profiles of the tread and sidewall from the cured tyre section.",
         benefit:
-          "Standardize tyre section development and connect cured geometry with flat semi-finished component profiles through bidirectional engineering workflows.",
+          "Predict extrusion profiles from theoretical tread and sidewall geometry, calibrated against real profile data from tyres in normal production.",
         description:
-          "Section Designer + supports the automatic development of tyre sections from specification matrices, alignment data and engineering rules. Its AI-based modules can connect components in the cured tyre section with their flat semi-finished profiles before vulcanization, enabling bidirectional workflows between specification data, tyre geometry and extrusion profiles.",
+          "Section Designer + calculates the specification matrix and develops flat, unrolled theoretical profiles of the tread and sidewall from the cured tyre section. An AI model then predicts the corresponding extrusion profiles, calibrated against real profile data measured from tyres in normal production, enabling bidirectional workflows between specification data, tyre geometry and extrusion profiles.",
         outputs: ["Specifications", "Alignment data"],
         result: "Tyre section geometry",
       },

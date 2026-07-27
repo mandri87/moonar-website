@@ -4,6 +4,7 @@ import { ProductProblem } from "@/components/products/product-problem";
 import { ProductWorkflow } from "@/components/products/product-workflow";
 import { ProductIo } from "@/components/products/product-io";
 import { ProductModules } from "@/components/products/product-modules";
+import { ExtrusionCalibration } from "@/components/products/extrusion-calibration";
 import { ProductDetails } from "@/components/products/product-details";
 import { ProductCrossLinks } from "@/components/products/product-cross-links";
 import { FinalCta } from "@/components/home/final-cta";
@@ -37,6 +38,7 @@ export default function TaireDesignerSuitePage() {
       <ProductProblem {...content.problem} />
       <ProductWorkflow steps={[...content.workflow]} />
       <ProductModules modules={product.modules} />
+      <ExtrusionCalibration />
       <ProductIo inputs={[...content.inputs]} outputs={[...content.outputs]} />
       <ProductDetails
         configurability={content.configurability}

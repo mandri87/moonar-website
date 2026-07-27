@@ -28,7 +28,7 @@ export const productContent: Record<string, ProductDetail> = {
     heroSummary:
       "An integrated engineering suite that automates mould and section design while using AI to translate component geometry between green and cured states.",
     heroBenefit:
-      "Connect extrusion profiles, cured component geometry and tyre specifications within one consistent, bidirectional engineering workflow.",
+      "Predict extrusion profiles for tread and sidewall from theoretical geometry, calibrated with real profile data from tyres in production — within one consistent, bidirectional engineering workflow.",
     problem: {
       heading: "Mould and section engineering are still built by hand",
       description:
@@ -36,8 +36,9 @@ export const productContent: Record<string, ProductDetail> = {
     },
     workflow: [
       "Import specification data, alignment data and customer-specific design rules",
-      "Generate tyre mould geometry with Mould Designer +",
-      "Generate tyre section geometry with Section Designer +",
+      "Calculate the specification matrix and generate tyre mould geometry with Mould Designer +",
+      "Develop flat, unrolled theoretical profiles of tread and sidewall with Section Designer +",
+      "Predict extrusion profiles using AI calibrated against real profile data from tyres in production",
       "Check geometric consistency between mould and section outputs",
       "Export dimensioned DXF files and structured geometry data",
     ],
@@ -45,11 +46,12 @@ export const productContent: Record<string, ProductDetail> = {
       "Alignment data",
       "Engineering parameters",
       "Customer-specific design rules",
+      "Real production tyre profile data (calibration)",
     ],
     outputs: [
       "Dimensioned mould geometry (DXF)",
       "Tyre section geometry",
-      "Flat semi-finished profile data",
+      "Tread and sidewall extrusion profiles",
       "Specification matrix",
       "Surface and rebar for FEA simulation (.step)",
       "Stress and stretch curves",
