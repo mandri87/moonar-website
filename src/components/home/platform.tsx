@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, CornerLeftUp } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 
 const flowSteps = [
   "Specification Data",
@@ -13,24 +14,28 @@ const flowSteps = [
 
 export function Platform() {
   return (
-    <Section id="platform">
+    <Section id="platform" className="bg-surface">
       <Container>
-        <SectionHeading
-          eyebrow="tAIre Platform"
-          title="One engineering platform. Multiple tyre development workflows."
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="tAIre Platform"
+            title="One engineering platform. Multiple tyre development workflows."
+          />
+        </Reveal>
 
         <div className="mt-10 flex flex-col gap-3 lg:flex-row lg:items-stretch lg:gap-0">
           {flowSteps.map((step, index) => (
             <div key={step} className="flex items-stretch">
-              <div className="flex flex-1 items-center gap-3 rounded-sm border border-border bg-surface px-5 py-4 lg:flex-col lg:items-start lg:justify-center lg:gap-2">
-                <span className="font-mono text-xs text-text-muted">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span className="text-sm font-medium text-text-primary">
-                  {step}
-                </span>
-              </div>
+              <Reveal delay={index * 80} className="flex-1">
+                <div className="card-elevated flex h-full flex-1 items-center gap-3 rounded-sm border border-border bg-surface-raised px-5 py-4 lg:flex-col lg:items-start lg:justify-center lg:gap-2">
+                  <span className="font-mono text-xs text-text-muted">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm font-medium text-text-primary">
+                    {step}
+                  </span>
+                </div>
+              </Reveal>
               {index < flowSteps.length - 1 ? (
                 <div className="flex items-center justify-center px-2 lg:px-3">
                   <ArrowRight

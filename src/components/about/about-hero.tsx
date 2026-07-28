@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section";
+import { Glow } from "@/components/ui/glow";
 
 export function AboutHero() {
   return (
-    <section className="border-b border-border py-12 lg:py-20">
+    <section className="relative overflow-hidden border-b border-border py-12 lg:py-20">
+      <Glow className="-right-40 -top-40 h-[560px] w-[560px]" />
       <Container>
         <div className="flex max-w-3xl flex-col gap-6">
           <Eyebrow>About Moonar</Eyebrow>

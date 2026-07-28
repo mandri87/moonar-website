@@ -27,44 +27,65 @@ export const mainNav = [
   {
     label: "References",
     children: [
-      { label: "Fundamentals", href: "/references/fundamentals" },
-      { label: "Engineering Insights", href: "/references/engineering-insights" },
-      { label: "White Papers", href: "/references/white-papers" },
-      { label: "Case Studies", href: "/references/case-studies" },
+      { label: "Tyre Design", href: "/references/tyre-design" },
+      { label: "Simulation", href: "/references/simulation" },
+      { label: "Tyre & Vehicle Dynamics", href: "/references/tyre-vehicle-dynamics" },
+      { label: "Testing", href: "/references/testing" },
+      { label: "Process", href: "/references/process" },
+      { label: "AI & Data Infrastructure", href: "/references/ai-data-infrastructure" },
       { label: "Publications", href: "/references/publications" },
+      { label: "Case Studies", href: "/references/case-studies" },
       { label: "Academy", href: "/references/academy" },
       { label: "Glossary", href: "/references/glossary" },
-      { label: "News", href: "/references/news" },
     ],
   },
 ] as const;
 
 export const referenceSections = [
   {
-    slug: "fundamentals",
-    label: "Fundamentals",
+    slug: "tyre-design",
+    label: "Tyre Design",
     description:
-      "Foundational engineering concepts behind tyre mould, section and performance development.",
+      "Mould, section and component design fundamentals for tyre engineering.",
   },
   {
-    slug: "engineering-insights",
-    label: "Engineering Insights",
-    description: "Technical perspectives on tyre design, simulation and automation.",
+    slug: "simulation",
+    label: "Simulation",
+    description:
+      "FEA and vehicle dynamics simulation methods for tyre and vehicle behaviour.",
   },
   {
-    slug: "white-papers",
-    label: "White Papers",
-    description: "In-depth documentation of Moonar's engineering approaches.",
+    slug: "tyre-vehicle-dynamics",
+    label: "Tyre & Vehicle Dynamics",
+    description:
+      "How an individual tyre generates force, and how those forces combine at vehicle level to determine handling behaviour.",
+  },
+  {
+    slug: "testing",
+    label: "Testing",
+    description:
+      "Indoor and outdoor tyre testing, from performance evaluation to regulatory homologation.",
+  },
+  {
+    slug: "process",
+    label: "Process",
+    description: "Industrial and manufacturing processes behind tyre production.",
+  },
+  {
+    slug: "ai-data-infrastructure",
+    label: "AI & Data Infrastructure",
+    description:
+      "Data architecture and machine learning foundations behind Moonar's predictive models.",
+  },
+  {
+    slug: "publications",
+    label: "Publications",
+    description: "Academic and research publications related to Moonar's engineering work.",
   },
   {
     slug: "case-studies",
     label: "Case Studies",
     description: "Applied examples of Moonar workflows in tyre development programs.",
-  },
-  {
-    slug: "publications",
-    label: "Publications",
-    description: "Research and methodology behind Moonar's predictive models.",
   },
   {
     slug: "academy",
@@ -75,11 +96,6 @@ export const referenceSections = [
     slug: "glossary",
     label: "Glossary",
     description: "Definitions of technical terms used across tyre engineering and Moonar's platform.",
-  },
-  {
-    slug: "news",
-    label: "News",
-    description: "Updates on Moonar's products, research and industrial partnerships.",
   },
 ] as const;
 

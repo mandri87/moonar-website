@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section";
+import { Glow } from "@/components/ui/glow";
 import { ContactForm } from "@/components/contact/contact-form";
 import { siteConfig } from "@/lib/site-config";
 
@@ -12,7 +13,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="py-12 lg:py-20">
+    <section className="relative overflow-hidden py-12 lg:py-20">
+      <Glow className="-right-40 -top-40 h-[560px] w-[560px]" />
       <Container>
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1.1fr]">
           <div className="flex flex-col gap-6">

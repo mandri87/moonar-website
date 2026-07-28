@@ -15,7 +15,7 @@ export function Header() {
           className="rounded-sm focus-visible:outline-none"
           aria-label="Moonar home"
         >
-          <Logo height={72} />
+          <Logo height={52} />
         </Link>
 
         <nav

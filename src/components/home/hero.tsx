@@ -1,10 +1,12 @@
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section";
+import { Glow } from "@/components/ui/glow";
 import { HeroVisual } from "@/components/home/hero-visual";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden border-b border-border py-12 lg:py-20">
+      <Glow className="-right-40 -top-40 h-[560px] w-[560px]" />
       <Container>
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
           <div className="flex flex-col gap-8">

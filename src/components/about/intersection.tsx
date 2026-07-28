@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Logo } from "@/components/layout/logo";
+import { Reveal } from "@/components/ui/reveal";
 
 const tyreEngineering = [
   "Tyre Design",
@@ -51,33 +52,37 @@ function Discipline({
 
 export function Intersection() {
   return (
-    <Section>
+    <Section className="bg-surface">
       <Container>
-        <SectionHeading
-          eyebrow="The Intersection of Two Worlds"
-          title="Two disciplines. One company."
-          align="center"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="The Intersection of Two Worlds"
+            title="Two disciplines. One company."
+            align="center"
+          />
+        </Reveal>
 
-        <div className="mx-auto mt-14 flex max-w-4xl flex-col items-center gap-10 rounded-md border border-border bg-surface px-8 py-12 sm:gap-8">
-          <div className="grid w-full grid-cols-1 items-center gap-10 sm:grid-cols-[1fr_auto_1fr] sm:gap-6">
-            <Discipline label="Tyre Engineering" items={tyreEngineering} align="left" />
-            <span className="font-mono text-3xl text-accent-secondary" aria-hidden="true">
-              ×
+        <Reveal>
+          <div className="card-elevated mx-auto mt-14 flex max-w-4xl flex-col items-center gap-10 rounded-md border border-border bg-surface-raised px-8 py-12 sm:gap-8">
+            <div className="grid w-full grid-cols-1 items-center gap-10 sm:grid-cols-[1fr_auto_1fr] sm:gap-6">
+              <Discipline label="Tyre Engineering" items={tyreEngineering} align="left" />
+              <span className="font-mono text-3xl text-accent-secondary" aria-hidden="true">
+                ×
+              </span>
+              <Discipline
+                label="Software Engineering"
+                items={softwareEngineering}
+                align="right"
+              />
+            </div>
+
+            <span className="font-mono text-3xl text-text-muted" aria-hidden="true">
+              =
             </span>
-            <Discipline
-              label="Software Engineering"
-              items={softwareEngineering}
-              align="right"
-            />
+
+            <Logo height={64} />
           </div>
-
-          <span className="font-mono text-3xl text-text-muted" aria-hidden="true">
-            =
-          </span>
-
-          <Logo height={56} />
-        </div>
+        </Reveal>
 
         <p className="mx-auto mt-10 max-w-xl text-balance text-center text-lg leading-relaxed text-text-secondary">
           Moonar doesn&apos;t simply build software for tyre engineers. It

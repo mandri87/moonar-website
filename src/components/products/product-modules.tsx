@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Section, SectionHeading } from "@/components/ui/section";
+import { Reveal } from "@/components/ui/reveal";
 
 const screenshots: Record<string, { src: string; alt: string }> = {
   "mould-designer-plus": {
@@ -24,57 +25,58 @@ type Module = {
 
 export function ProductModules({ modules }: { modules: readonly Module[] }) {
   return (
-    <Section>
+    <Section className="bg-surface">
       <Container>
-        <SectionHeading
-          eyebrow="Included Modules"
-          title="Two modules, one design environment"
-        />
+        <Reveal>
+          <SectionHeading
+            eyebrow="Included Modules"
+            title="Two modules, one design environment"
+          />
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {modules.map((module) => {
+          {modules.map((module, index) => {
             const screenshot = screenshots[module.id];
             return (
-              <article
-                key={module.id}
-                className="flex flex-col gap-6 rounded-md border border-border bg-surface p-6"
-              >
-                {screenshot ? (
-                  <div className="relative aspect-square w-full overflow-hidden rounded-sm border border-border">
-                    <Image
-                      src={screenshot.src}
-                      alt={screenshot.alt}
-                      fill
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                      className="object-cover object-center"
-                    />
-                  </div>
-                ) : null}
-                <div className="flex flex-col gap-3">
-                  <h3 className="text-lg font-semibold text-text-primary">
-                    {module.name}
-                  </h3>
-                  <p className="text-sm leading-relaxed text-text-secondary">
-                    {module.description}
-                  </p>
-                  <p className="text-sm leading-relaxed text-text-muted">
-                    {module.benefit}
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {module.outputs.map((output) => (
-                      <span
-                        key={output}
-                        className="rounded-sm border border-border-strong px-2 py-1 font-mono text-[10px] uppercase tracking-[0.06em] text-text-muted"
-                      >
-                        {output}
+              <Reveal key={module.id} delay={index * 100} className="h-full">
+                <article className="card-elevated flex h-full flex-col gap-6 rounded-md border border-border bg-surface-raised p-6">
+                  {screenshot ? (
+                    <div className="relative aspect-square w-full overflow-hidden rounded-sm border border-border">
+                      <Image
+                        src={screenshot.src}
+                        alt={screenshot.alt}
+                        fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="object-cover object-center"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="flex flex-col gap-3">
+                    <h3 className="text-lg font-semibold text-text-primary">
+                      {module.name}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-text-secondary">
+                      {module.description}
+                    </p>
+                    <p className="text-sm leading-relaxed text-text-muted">
+                      {module.benefit}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {module.outputs.map((output) => (
+                        <span
+                          key={output}
+                          className="rounded-sm border border-border-strong px-2 py-1 font-mono text-[10px] uppercase tracking-[0.06em] text-text-muted"
+                        >
+                          {output}
+                        </span>
+                      ))}
+                      <span className="rounded-sm border border-accent/40 bg-accent/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.06em] text-accent-secondary">
+                        → {module.result}
                       </span>
-                    ))}
-                    <span className="rounded-sm border border-accent/40 bg-accent/10 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.06em] text-accent-secondary">
-                      → {module.result}
-                    </span>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Reveal>
             );
           })}
         </div>

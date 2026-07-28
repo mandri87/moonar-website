@@ -42,7 +42,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-md border border-border bg-surface p-8 text-center">
+      <div className="card-elevated rounded-md border border-border bg-surface p-8 text-center">
         <p className="text-lg font-semibold text-text-primary">Message sent</p>
         <p className="mt-2 text-sm leading-relaxed text-text-secondary">
           Thank you for reaching out. Our engineering team will get back to you

@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section";
+import { Glow } from "@/components/ui/glow";
 
 export function ProductHero({
   eyebrow,
@@ -18,7 +19,8 @@ export function ProductHero({
   visual: React.ReactNode;
 }) {
   return (
-    <section className="border-b border-border py-12 lg:py-20">
+    <section className="relative overflow-hidden border-b border-border py-12 lg:py-20">
+      <Glow className="-right-40 -top-40 h-[560px] w-[560px]" />
       <Container>
         <Link
           href="/#products"

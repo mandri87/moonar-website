@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(lsof -tiTCP:3000)",
+      "Bash(xargs -r kill -9)"
+    ]
+  }
+}

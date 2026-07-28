@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ProductHero } from "@/components/products/product-hero";
 import { ProductProblem } from "@/components/products/product-problem";
 import { PlatformPositionNote } from "@/components/products/platform-position-note";
+import { ScanToCadFlow } from "@/components/products/scan-to-cad-flow";
 import { ProductWorkflow } from "@/components/products/product-workflow";
 import { ProductIo } from "@/components/products/product-io";
 import { ProductDetails } from "@/components/products/product-details";
@@ -38,6 +39,7 @@ export default function TaireSectionScannerPage() {
       {content.platformNote ? (
         <PlatformPositionNote {...content.platformNote} />
       ) : null}
+      <ScanToCadFlow />
       <ProductWorkflow steps={[...content.workflow]} />
       <ProductIo inputs={[...content.inputs]} outputs={[...content.outputs]} />
       <ProductDetails
