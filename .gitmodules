@@ -1,0 +1,3 @@
+[submodule "content/knowledge-base"]
+	path = content/knowledge-base
+	url = https://github.com/moonar-ai/knowledge-base.git
