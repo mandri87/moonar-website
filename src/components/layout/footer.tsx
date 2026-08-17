@@ -14,7 +14,7 @@ const footerColumns = [
   {
     heading: "Company",
     links: [
-      { label: "About", href: "/company/about" },
+      { label: "About", href: "/about" },
       { label: "Contact", href: "/contact" },
     ],
   },
@@ -47,6 +47,22 @@ export function Footer() {
             <p className="max-w-xs text-sm leading-relaxed text-text-secondary">
               {siteConfig.tagline}
             </p>
+            <Link
+              href="https://www.linkedin.com/company/moonar-tyre-solutions/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Moonar on LinkedIn"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-text-secondary transition-colors duration-150 hover:border-text-primary hover:text-text-primary"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="h-4 w-4"
+                aria-hidden="true"
+              >
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.94v5.666H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.114 20.452H3.56V9h3.554v11.452z" />
+              </svg>
+            </Link>
           </div>
 
           {footerColumns.map((column) => (
